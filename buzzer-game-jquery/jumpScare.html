@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik's Buzzer Game - Easter Egg</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./css/jumpScare.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: black; /* Default background */
+            height: 100vh; /* Full viewport height */
+            width: 100vw; /* Full viewport width */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #braveButton {
+            font-size: 24px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="braveButton">Brave Souls Only</button>
+    <!-- Hidden audio element -->
+    <audio id="jumpScareSound" src="./audio/jumpScare.wav" preload="auto"></audio>
+
+    <script>
+        document.getElementById('braveButton').addEventListener('click', function() {
+            // Play the jump scare sound
+            var audio = document.getElementById('jumpScareSound');
+            audio.play();
+
+            // Change the background to the jump scare image
+            document.body.style.backgroundImage = "url('./img/jumpScare.png')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundRepeat = "no-repeat";
+
+            // Optionally hide the button after clicking
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

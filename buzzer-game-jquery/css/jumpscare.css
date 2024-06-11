@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    body {
+      flex-direction: column; /* Stack elements vertically on smaller screens */
+      justify-content: space-around; /* Distribute space evenly */
+    }
+  
+    #theBuzzer {
+      padding: 15px 30px; /* Smaller padding on mobile */
+      font-size: 18px; /* Slightly smaller font size for the button */
+    }
+  
+    #cookieCounter {
+      top: 0;
+      right: 0;
+      font-size: 14px; /* Smaller font size for the counter */
+    }
+  }
+  
